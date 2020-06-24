@@ -1,0 +1,24 @@
+body {
+    background-color: lightslategray;
+}
+
+.header {
+    margin: 10px;
+    text-align: center;
+    font-family: 'MuseoModerno', cursive;
+    font-size: 50px;
+    -webkit-text-stroke: 1.5px rgba(253, 254, 255, 0.945); 
+}
+
+.game {
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+div.game-square {
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+    font-weight: 600;
+    color: darkblue;
+    height:100px;
+}
