@@ -12,6 +12,10 @@ body {
 
 #results {
     min-height: 50px;
+    color:white;
+    font-size:20px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 #board {
