@@ -10,33 +10,31 @@ body {
     -webkit-text-stroke: 1.5px rgba(253, 254, 255, 0.945); 
 }
 
-container.game {
-    margin: 30px;
+#results {
+    min-height: 50px;
 }
 
 #board {
-    display: grid;
+    display: flex ;
     grid-template-columns: repeat(3,115px [col-start]);
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     flex-flow: row wrap;
     max-width: 360px;
-    margin: auto;
-    text-align: center;
-    
+    margin: auto;   
 }
 
 .game-square {
-    display: flex;
-    flex-basis: 33%;
-    width: 120px;
-    height: 120px;
-    margin: auto;
-    padding: 20px 40px;
+    flex-basis: 33.3%;
+    width: 115px;
+    height: 115px;
+    /* margin: auto; */
+    /* padding: 20px 40px; */
     font-family: 'Rock Salt', cursive;
     font-size: 40px;
     font-weight: 800;
     color: floralwhite;
+    text-align: center;
 }
 
 .middle-column {
