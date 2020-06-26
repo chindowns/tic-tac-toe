@@ -1,0 +1,59 @@
+body {
+    background-image: url(../images/Chalkboard-Background.jpg) ;
+}
+
+.header {
+    margin: 10px;
+    text-align: center;
+    font-family: 'MuseoModerno', cursive;
+    font-size: 50px;
+    -webkit-text-stroke: 1.5px rgba(253, 254, 255, 0.945); 
+}
+
+container.game {
+    margin: 30px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3,115px [col-start]);
+    align-items: stretch;
+    justify-content: center;
+    flex-flow: row wrap;
+    max-width: 360px;
+    margin: auto;
+    text-align: center;
+    
+}
+
+.game-square {
+    display: flex;
+    flex-basis: 33%;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    padding: 20px 40px;
+    font-family: 'Rock Salt', cursive;
+    font-size: 40px;
+    font-weight: 800;
+    color: floralwhite;
+}
+
+.middle-column {
+    border-right: 2px solid snow;
+    border-left: 2px solid snow;
+    
+}
+
+.middle-row {
+    border-top: 2px solid snow;
+    border-bottom: 2px solid snow;
+}
+
+/* Small screens */
+@media all and (max-width: 360px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}

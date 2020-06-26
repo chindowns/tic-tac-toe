@@ -7,7 +7,8 @@ $(document).ready(() => {
             let square = $(this).attr('id')
 
             $(this).html("X");
-            $(this).addClass("uk-padding-medium-vertical");
+            // Adds padding for the characters
+            // $(this).addClass("uk-padding-medium-vertical");
 
             board[square] = "X";
 
@@ -27,12 +28,6 @@ $(document).ready(() => {
             }
         });
 
-        // const tries = [];
-        // for (let i = 0; i < 9; i++){
-        //     if(board[i] !== null){
-        //         tries.push(i);
-        //     }
-        // }
         console.log(tries);
 
         do {
