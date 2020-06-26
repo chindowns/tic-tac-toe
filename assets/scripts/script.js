@@ -1,19 +1,23 @@
 const board = [null, null, null, null, null, null, null, null, null];
-const available = [0,1,2,3,4,5,6,7,8]
+let available = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
 $(document).ready(() => {
     const playerMove = () => {
         $(".game-square").on("click", function (event) {
             event.preventDefault();
+
             let square = $(this).attr('id');
             square = +square;
             console.log(typeof (square));
-            if(available.includes(square)) {
 
-            $(this).html("X");
-            board[square] = "X";
-            available.splice(available.indexOf(square),1);
-            console.log(`Player chose: ${square}`)
-            checkGame("player");
+            if (available.includes(square)) {
+
+                $(this).html("X");
+                board[square] = "X";
+                available.splice(available.indexOf(square), 1);
+
+                console.log(`Player chose: ${square}`)
+                checkGame("player");
             }
         });
     }
@@ -26,10 +30,10 @@ $(document).ready(() => {
 
         console.log(`Computer Chose: ${osquare}`);
 
-                $(`#${osquare}`).html("O");
-                board[osquare] = "O";
-                available.splice(available.indexOf(osquare), 1);
-                console.log(`Available Choices: ${available}`);
+        $(`#${osquare}`).html("O");
+        board[osquare] = "O";
+        available.splice(available.indexOf(osquare), 1);
+        console.log(`Available Choices: ${available}`);
 
         checkGame("comp");
     }
@@ -45,7 +49,7 @@ $(document).ready(() => {
         const diag1 = board[0] + board[4] + board[8];
         const diag2 = board[2] + board[4] + board[6];
 
-        console.log(row1, "\n", row2, "\n", row3, "\n", col1, "\n", col2, "\n", col3, "\n", diag1, "\n",diag2)
+        console.log(row1, "\n", row2, "\n", row3, "\n", col1, "\n", col2, "\n", col3, "\n", diag1, "\n", diag2)
 
         if (row1 === "XXX" ||
             row2 === "XXX" ||
@@ -54,10 +58,12 @@ $(document).ready(() => {
             col2 === "XXX" ||
             col3 === "XXX" ||
             diag1 === "XXX" ||
-            diag2 === "XXX" ) {
-            endGame("You are the Champion");
-        }
-        if (row1 === "OOO" ||
+            diag2 === "XXX") {
+
+              available = [];
+              endGame("You are the Champion");
+    
+            } else if (row1 === "OOO" ||
             row2 === "OOO" ||
             row3 === "OOO" ||
             col1 === "OOO" ||
@@ -65,18 +71,25 @@ $(document).ready(() => {
             col3 === "OOO" ||
             diag1 === "OOO" ||
             diag2 === "OOO") {
-            endGame("Better Luck Next Time");
-        }
+
+              available = [];
+              endGame("Better Luck Next Time");
     
-        nextMove(turn);
-        
+            } else {
+
+            nextMove(turn);
+
+        }
+
     }
 
     const endGame = (result) => {
-        const playAgain = $("<a></a>").text("Play Again");
-        $("#results").append(playAgain);
-        const results = $(`<h1>$results</h1>`);
+        const results = $(`<h1>${result}</h1>`);
         $("#results").append(results);
+
+        const playAgain = $("<a type='button' id='playAgain' onClick='window.location.reload()'></a>").text("Play Again");
+        $("#results").append(playAgain);
+
     }
 
     const nextMove = (turn) => {

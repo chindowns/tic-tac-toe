@@ -12,10 +12,18 @@ body {
 
 #results {
     min-height: 50px;
-    color:white;
-    font-size:20px;
+    color:rgb(255, 254, 242);
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+    font-weight: 600;
     margin: 20px auto;
     text-align: center;
+}
+
+#playAgain {
+    border: 1px solid rgb(238, 233, 233);
+    border-radius: 15px;
+    margin-bottom: 50px;
 }
 
 #board {
@@ -25,7 +33,7 @@ body {
     justify-content: center;
     flex-flow: row wrap;
     max-width: 360px;
-    margin: auto;   
+    margin: 50px auto;   
 }
 
 .game-square {
