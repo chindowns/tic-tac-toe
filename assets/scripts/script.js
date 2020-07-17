@@ -8,7 +8,7 @@ $(document).ready(() => {
 
             let square = $(this).attr('id');
             square = +square;
-            console.log(typeof (square));
+            // console.log(typeof (square));
 
             if (available.includes(square)) {
 
@@ -16,19 +16,19 @@ $(document).ready(() => {
                 board[square] = "X";
                 available.splice(available.indexOf(square), 1);
 
-                console.log(`Player chose: ${square}`)
+                // console.log(`Player chose: ${square}`)
                 checkGame("player");
             }
         });
     }
 
     const computerMove = () => {
-        console.log("Computer's Move");
+        // console.log("Computer's Move");
 
         let index = Math.floor(Math.random() * available.length);
         let osquare = available[index];
 
-        console.log(`Computer Chose: ${osquare}`);
+        // console.log(`Computer Chose: ${osquare}`);
 
         $(`#${osquare}`).html("O");
         board[osquare] = "O";
@@ -39,7 +39,7 @@ $(document).ready(() => {
     }
 
     const checkGame = (turn) => {
-        console.log(`Check for a Win by ${turn}`);
+        // console.log(`Check for a Win by ${turn}`);
         const row1 = board[0] + board[1] + board[2];
         const row2 = board[3] + board[4] + board[5];
         const row3 = board[6] + board[7] + board[8];
@@ -49,7 +49,7 @@ $(document).ready(() => {
         const diag1 = board[0] + board[4] + board[8];
         const diag2 = board[2] + board[4] + board[6];
 
-        console.log(row1, "\n", row2, "\n", row3, "\n", col1, "\n", col2, "\n", col3, "\n", diag1, "\n", diag2)
+        // console.log(row1, "\n", row2, "\n", row3, "\n", col1, "\n", col2, "\n", col3, "\n", diag1, "\n", diag2)
 
         if (row1 === "XXX" ||
             row2 === "XXX" ||
